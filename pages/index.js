@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
 import Link from "next/link"
 
 export default function Home() {
@@ -12,7 +10,6 @@ export default function Home() {
         <meta name="description" content="CodesWear.com - Wear the code" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
       <div className="">
         <img src="/home.jpg" alt="ClothesImg" />
       </div>
@@ -98,7 +95,6 @@ export default function Home() {
           <button className="flex mx-auto mt-16 text-white bg-orange-500 border-0 py-2 px-8 focus:outline-none hover:bg-orange-600 rounded text-lg">Start Shopping</button>
         </div>
       </section>
-      <Footer />
     </div>
   )
 }
