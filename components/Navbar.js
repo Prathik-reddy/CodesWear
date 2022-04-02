@@ -21,7 +21,7 @@ const Navbar = () => {
             <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center shadow-md">
                 <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                     <Link href="/">
-                        <Image src="/logo.png" alt="" width="100" height="50" />
+                        <Image src="/logo1.jpg" alt="" width="100" height="50" />
                     </Link>
                 </a>
                 <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center font-bold md:text-xl">
