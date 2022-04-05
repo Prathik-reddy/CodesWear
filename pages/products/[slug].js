@@ -90,7 +90,7 @@ const Post = ({addToCart,removeFromCart}) => {
               </div>
             </div>
             <div className="flex">
-              <span className="title-font font-medium text-2xl text-gray-900">$58.00</span>
+              <span className="title-font font-medium text-2xl text-gray-900">₹58.00</span>
               <button onClick={() =>{addToCart(slug, 1, 500, "Wear the code", "XL", "Red")}} className="flex ml-3 text-white bg-orange-500 border-0 py-2 px-4 focus:outline-none hover:bg-orange-600 rounded text-sm">Add To Cart</button>
               <button className="flex ml-3 text-white bg-orange-500 border-0 py-2 px-4 focus:outline-none hover:bg-orange-600 rounded text-sm">Buy Now</button>
               <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
