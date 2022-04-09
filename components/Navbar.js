@@ -39,7 +39,9 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, total }) => {
                 </nav>
                 <button className="inline-flex items-center  border-0 py-1 px-3 focus:outline-none rounded  text-2xl mt-4 md:mt-0">
                     <Link href={"/login"}>
+                        <a>
                         <MdAccountCircle className="text-orange-500 mx-2 hover:text-orange-600 "/>
+                        </a>
                     </Link>
                     <AiOutlineShoppingCart className="text-orange-500 mx-2 hover:text-orange-600 " onClick={toggleCart}/>
                 </button>
