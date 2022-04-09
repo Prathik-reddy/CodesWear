@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlineShoppingCart, AiFillCloseCircle, AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 import { BsFillBagCheckFill,BsFillCartCheckFill } from 'react-icons/bs';
+import { MdAccountCircle } from 'react-icons/md';
 import { useRef } from 'react';
 
 const Navbar = ({ cart, addToCart, removeFromCart, clearCart, total }) => {
@@ -36,7 +37,11 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, total }) => {
                     <Link href="/stickers" ><a className="mr-5 text-orange-500 hover:text-black">Stickers</a></Link>
                     <Link href="/mugs" ><a className="mr-5 text-orange-500 hover:text-black">Mugs</a></Link>
                 </nav>
-                <button onClick={toggleCart} className="inline-flex items-center bg-orange-500 border-0 py-1 px-3 focus:outline-none hover:bg-black text-black hover:text-orange-500 rounded  text-2xl mt-4 md:mt-0"><AiOutlineShoppingCart />
+                <button className="inline-flex items-center  border-0 py-1 px-3 focus:outline-none rounded  text-2xl mt-4 md:mt-0">
+                    <Link href={"/login"}>
+                        <MdAccountCircle className="text-orange-500 mx-2 hover:text-orange-600 "/>
+                    </Link>
+                    <AiOutlineShoppingCart className="text-orange-500 mx-2 hover:text-orange-600 " onClick={toggleCart}/>
                 </button>
                 <div ref={ref} className={`${Object.keys(cart).length == 0 ? "hidden":""} z-20 w-72  min-h-screen sideCart absolute top-0 right-0 bg-orange-100 px-8 py-10 text-xl`}>
                     <h2 className="font-bold text-xl text-center underline text-orange-500">Your Shopping Cart</h2>
