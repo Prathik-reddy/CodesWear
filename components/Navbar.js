@@ -57,7 +57,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, total }) => {
                             console.log("itemcode ; ", k);
                             return <li key={k}>
                                 <div className="item flex my-3">
-                                    <div className="w-2/3 font-semibold ">{cart[k].name} : </div>
+                                    <div className="w-2/3 font-semibold ">{cart[k].name} ({cart[k].size}/{cart[k].variant}): </div>
                                     <div className="w-1/3 font-semibold flex items-center justify-center "><AiFillMinusCircle onClick={() => { removeFromCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant) }} className=" hover:text-orange-600 cursor-pointer text-lg text-orange-500 mx-2" />{cart[k].qty}<AiFillPlusCircle onClick={() => { addToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant) }} className=" hover:text-orange-600  cursor-pointer text-lg text-orange-500 mx-2" />
                                     </div>
                                 </div>
