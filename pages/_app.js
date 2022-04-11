@@ -2,10 +2,12 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import "../styles/globals.css";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router"
 
 function MyApp({ Component, pageProps }) {
   const [cart, setcart] = useState({});
   const [total, settotal] = useState(0);
+  const router = useRouter();
 
   useEffect(() => {
     try {
@@ -29,11 +31,10 @@ function MyApp({ Component, pageProps }) {
     }
     settotal(subt);
   };
+
   const addToCart = (itemCode, qty, price, name, size, variant) => {
     let newCart = JSON.parse(JSON.stringify(cart));
     if (itemCode in cart) {
-      console.log("addworinkg");
-
       newCart[itemCode].qty = cart[itemCode].qty + qty;
     } else {
       newCart[itemCode] = { qty: 1, price, name, size, variant };
@@ -41,10 +42,10 @@ function MyApp({ Component, pageProps }) {
     setcart(newCart);
     saveCart(newCart);
   };
+
   const removeFromCart = (itemCode, qty, price, name, size, variant) => {
     let newCart = JSON.parse(JSON.stringify(cart));
     if (itemCode in cart) {
-      console.log("remworinkg");
       newCart[itemCode].qty = cart[itemCode].qty - qty;
     }
     if (newCart[itemCode]["qty"] <= 0) {
@@ -53,15 +54,23 @@ function MyApp({ Component, pageProps }) {
     setcart(newCart);
     saveCart(newCart);
   };
+
   const clearCart = () => {
     setcart({});
     saveCart({});
-    console.log("cart has been cleared");
   };
+
+  const buyNow = (itemCode, qty, price, name, size, variant) => {
+    let newCart = { slug:{itemCode,qty, price, name, size, variant }};
+    setcart(newCart);
+    saveCart(newCart);
+    router.push("/checkout");
+  }
+
   return (
     <>
       <Navbar key={total} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} total={total} />
-      <Component cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} total={total} {...pageProps} />
+      <Component buyNow={buyNow} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} total={total} {...pageProps} />
       <Footer />
     </>
   );

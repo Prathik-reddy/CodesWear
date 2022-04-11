@@ -3,7 +3,6 @@ import connectDb from "../../middleware/mongoose"
 
 const handler = async (req, res) => {
     let products = await Product.find()
-    console.log(products);
     let tshirts = {}
     for (let item of products) {
         if (item.title in tshirts) {

@@ -45,7 +45,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, total }) => {
                     </Link>
                     <AiOutlineShoppingCart className="text-orange-500 mx-2 hover:text-orange-600 " onClick={toggleCart}/>
                 </button>
-                <div ref={ref} className={`${Object.keys(cart).length == 0 ? "hidden":""} z-20 w-72  min-h-screen sideCart absolute top-0 right-0 bg-orange-100 px-8 py-10 text-xl`}>
+                <div ref={ref} className={`${Object.keys(cart).length == 0 ? "hidden":""} z-20 w-72  h-[100vh] sideCart overflow-y-scroll absolute top-0 right-0 bg-orange-100 px-8 py-10 text-xl`}>
                     <h2 className="font-bold text-xl text-center underline text-orange-500">Your Shopping Cart</h2>
                     <span onClick={toggleCart} className=" cursor-pointer text-2xl text-orange-500 hover:text-black absolute top-3 right-3"><AiFillCloseCircle /></span>
                     <ol className="list-decimal font-semibold ">
@@ -54,7 +54,6 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, total }) => {
                                 <p className="mx-2 font-semibold mt-3">Your cart is empty.</p>
                             </div>}
                         {Object.keys(cart).map((k) => {
-                            console.log("itemcode ; ", k);
                             return <li key={k}>
                                 <div className="item flex my-3">
                                     <div className="w-2/3 font-semibold ">{cart[k].name} ({cart[k].size}/{cart[k].variant}): </div>

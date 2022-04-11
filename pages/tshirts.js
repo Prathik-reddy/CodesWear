@@ -12,7 +12,7 @@ const tshirts = ({ products }) => {
         <div className="container bg-red p-2 py-24 mx-auto ">
           <div className="flex flex-wrap justify-evenly  ">
             {Object.keys(products).map((p) => {
-              return <div key={p._id} className="lg:w-1/5 md:w-1/4 p-5 m-3 border rounded-md border-orange-500 w-full shadow-lg">
+              return <div key={products[p]._id} className="lg:w-1/5 md:w-1/4 p-5 m-3 border rounded-md border-orange-500 w-full shadow-lg">
                 <Link passHref={true} href={`/products/${products[p].slug}`}>
                   <div>
                     <a className="block relative rounded overflow-hidden">
