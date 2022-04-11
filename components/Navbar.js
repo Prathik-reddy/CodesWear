@@ -65,7 +65,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, total }) => {
                     </ol>
                     <h3 className="font-bold mx-2">SubTotal : ₹{total}</h3>
                     <div className="flex">
-                        <Link href={"/checkout"}><button className="flex mr-2 mt-8 text-white bg-orange-500 border-0 py-1 px-2 focus:outline-none hover:bg-orange-600 rounded text-sm"><BsFillCartCheckFill className="m-1" />Checkout</button></Link>
+                        <Link passHref ={true} href={"/checkout"}><button className="flex mr-2 mt-8 text-white bg-orange-500 border-0 py-1 px-2 focus:outline-none hover:bg-orange-600 rounded text-sm"><BsFillCartCheckFill className="m-1" />Checkout</button></Link>
                         <button onClick={clearCart} className="flex mr-2 mt-8 text-white bg-orange-500 border-0 py-1 px-2 focus:outline-none hover:bg-orange-600 rounded text-sm"><BsFillBagCheckFill className="m-1" />Clear Cart</button>
                     </div>
 
