@@ -41,6 +41,7 @@ function MyApp({ Component, pageProps }) {
     }
     setcart(newCart);
     saveCart(newCart);
+    
   };
 
   const removeFromCart = (itemCode, qty, price, name, size, variant) => {
