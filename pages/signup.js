@@ -27,7 +27,7 @@ const Signup = () => {
     e.preventDefault();
     const data = { name, email, pass }
     console.log("data : ", data);
-    let res = await fetch("http://localhost:3000/api/signUp", {
+    let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signUp`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
